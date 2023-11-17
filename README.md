@@ -13,5 +13,5 @@ or could be installed on a server and send the information to a website, or to a
 https://www.youtube.com/watch?v=ijY9xcsvReM&list=PLgG8HRRNnCqwKU1RQHtcnMoUlva7SEy0E
 
 ## References
-reference for Python Asynchronous Programming
+- Python Asynchronous Programming
 https://www.youtube.com/watch?v=cZ3iHLIDzVI&list=PLhTjy8cBISEpfMihZ8E5yynf5sqPCcBXD&index=1&t=0s

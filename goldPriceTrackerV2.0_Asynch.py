@@ -1,9 +1,10 @@
 
 from priceTracker import *
 
-import time
+import asyncio
 
-def main():
+import time
+async def main():
 
     urls = ['https://pricegold.net/ar/kw-kuwait/',
             'https://ar.fkjewellers.com/pages/gold-price-in-kuwait',
@@ -12,14 +13,20 @@ def main():
 
     gold_prices = []
 
+    tasks = []
+
     print()
 
     start = time.time()
 
     for url in urls:
-        goldPrice24 = getGoldPrice24(url)
-        if goldPrice24:
-            gold_prices.append( (goldPrice24,url) )
+        tasks.append( asyncio.create_task(getGoldPrice24_Async(url)) )
+
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.ALL_COMPLETED)
+
+    for t, url in zip(done, urls):
+        gold_prices.append((t.result(), url))
+
 
     end = time.time()
 
@@ -34,7 +41,11 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+
+    # to fix a known bug in that return error on windows
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    asyncio.run(main())
+
 
 
 

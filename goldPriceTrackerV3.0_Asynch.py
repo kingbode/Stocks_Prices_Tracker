@@ -6,11 +6,13 @@ in this version:
 - we use bs4 to parse the html content
 - we collect the gold prices from 4 websites
 - we get the average price in 3 decimal points and save it in a json file
+- we will plot the data in a graph using matplotlib
 """
 
 from priceTracker import *
 import asyncio
-import time
+
+
 async def main():
 
     urls = ['https://pricegold.net/ar/kw-kuwait/',
@@ -18,28 +20,12 @@ async def main():
             'https://wikigerman.net/gold-kw/',
             'https://www.livepriceofgold.com/']
 
-    gold_prices = []
-    tasks = []
-    print()
-    start = time.time()
+    average_gold_price = await get_all_gold_prices24(urls)
 
-    for url in urls:
-        tasks.append(asyncio.create_task(get_gold_price24_async(url)))
+    update_gold_price24_json_file(average_gold_price)
 
-    done, pending = await asyncio.wait(tasks, return_when=asyncio.ALL_COMPLETED)
+    plot_prices()
 
-    for t, url in zip(done, urls):
-        gold_prices.append((t.result(), url))
-
-    end = time.time()
-
-    # get the average price in 3 decimal points
-    averageGoldPrice = round(sum([gold_price[0] for gold_price in gold_prices])/len(gold_prices), 3)
-
-    print(f'\nThe average gold price is: {averageGoldPrice} KD')
-    print(f'\nTime taken: {end-start}')
-
-    update_gold_price24_json_file(averageGoldPrice)
 
 if __name__ == '__main__':
 

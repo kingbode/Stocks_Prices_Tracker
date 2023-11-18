@@ -17,7 +17,7 @@ def main():
     start = time.time()
 
     for url in urls:
-        goldPrice24 = getGoldPrice24(url)
+        goldPrice24 = get_gold_price24(url)
         if goldPrice24:
             gold_prices.append( (goldPrice24,url) )
 
@@ -30,7 +30,7 @@ def main():
 
     print(f'\nTime taken: {end-start}')
 
-    updateGoldPrice24_JSONFile(averageGoldPrice)
+    update_gold_price24_json_file(averageGoldPrice)
 
 
 if __name__ == '__main__':

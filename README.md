@@ -10,7 +10,7 @@ or could be installed on a server and send the information to a website, or to a
 
 
 ## Videos to explain the code
-(https://www.youtube.com/watch?v=ijY9xcsvReM&list=PLgG8HRRNnCqwKU1RQHtcnMoUlva7SEy0E)
+https://www.youtube.com/watch?v=ijY9xcsvReM&list=PLgG8HRRNnCqwKU1RQHtcnMoUlva7SEy0E
 
 ## References
 reference for Python Asynchronous Programming

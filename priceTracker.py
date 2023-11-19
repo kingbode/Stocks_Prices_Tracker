@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import json
 import os
 
+
 def get_gold_price24(url):
     """
     This function takes an url and returns the gold price from that url
@@ -25,7 +26,7 @@ def get_gold_price24(url):
             gold_price24 = float(convert_numbers.hindi_to_english(gold_price24)) / 100
         else:
             gold_price24 = soup.find_all('tbody')[0].find_all('tr')[0]
-            gold_price24 = gold_price24.find_all('td')[1].text.replace("د.ك.","").replace("\xa0\u200f", "")
+            gold_price24 = gold_price24.find_all('td')[1].text.replace("د.ك.", "").replace("\xa0\u200f", "")
             if url == 'https://wikigerman.net/gold-kw/':
                 gold_price24 = float(convert_numbers.hindi_to_english(gold_price24)) / 100
             else:
@@ -41,9 +42,9 @@ def get_gold_price24(url):
 
 async def get_gold_price24_async(url):
     """
-       This function takes an url and returns the gold price from that url
-       :param url:
-       :return: float - the gold price
+   This function takes an url and returns the gold price from that url
+   :param url:
+   :return: float - the gold price
     """
     try:
         async with (aiohttp.ClientSession() as session):
@@ -57,7 +58,7 @@ async def get_gold_price24_async(url):
                     gold_price24 = float(convert_numbers.hindi_to_english(gold_price24)) / 100
                 else:
                     gold_price24 = soup.find_all('tbody')[0].find_all('tr')[0].find_all('td')[1]
-                    gold_price24 = gold_price24.text.replace("د.ك.","").replace("\xa0\u200f", "")
+                    gold_price24 = gold_price24.text.replace("د.ك.", "").replace("\xa0\u200f", "")
                     if url == 'https://wikigerman.net/gold-kw/':
                         gold_price24 = float(convert_numbers.hindi_to_english(gold_price24)) / 100
                     else:
@@ -83,10 +84,10 @@ async def get_all_gold_prices24(urls):
         gold_prices.append((t.result(), url))
     end = time.time()
     # get the average price in 3 decimal points
-    averageGoldPrice = round(sum([gold_price[0] for gold_price in gold_prices]) / len(gold_prices), 3)
-    print(f'\nThe average gold price is: {averageGoldPrice} KD')
+    average_gold_price = round(sum([gold_price[0] for gold_price in gold_prices]) / len(gold_prices), 3)
+    print(f'\nThe average gold price is: {average_gold_price} KD')
     print(f'\nTime taken: {end - start}')
-    return averageGoldPrice
+    return average_gold_price
 
 
 def update_gold_price24_json_file(average_gold_price):

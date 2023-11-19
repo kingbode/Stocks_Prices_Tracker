@@ -15,9 +15,6 @@ import asyncio
 
 async def main():
 
-    x = update_gold_price24_json_file(1.0)
-    print(x)
-
     urls = ['https://pricegold.net/ar/kw-kuwait/',
             'https://ar.fkjewellers.com/pages/gold-price-in-kuwait',
             'https://wikigerman.net/gold-kw/',

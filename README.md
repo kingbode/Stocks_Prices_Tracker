@@ -16,22 +16,22 @@ https://www.youtube.com/watch?v=ijY9xcsvReM&list=PLgG8HRRNnCqwKU1RQHtcnMoUlva7SE
 reference for Python Asynchronous Programming
 https://www.youtube.com/watch?v=cZ3iHLIDzVI&list=PLhTjy8cBISEpfMihZ8E5yynf5sqPCcBXD&index=1&t=0s
 
-- in version goldPriceTrackerV1.0.py
-- - we use bs4 to parse the html content
-- - we collect the gold prices from 4 websites
-- - we get the average price in 3 decimal points and save it in a json file
-- - created a functions library "priceTracker.py" file that contains all the functions ( get_gold_price24 , update_gold_price24_json_file )
+# in version goldPriceTrackerV1.0.py
+- use bs4 to parse the html content
+- collect the gold prices from 4 websites
+- get the average price in 3 decimal points and save it in a json file
+- created a functions library "priceTracker.py" file that contains all the functions ( get_gold_price24 , update_gold_price24_json_file )
 
-- in version goldPriceTrackerV2.0_Async.py
-- - we use asyncio to execute the functions concurrently
-- - we use aiohttp to make the requests to the websites
-- - we use bs4 to parse the html content
-- - we collect the gold prices from 4 websites
-- - we get the average price in 3 decimal points and save it in a json file
-- - updated the functions library "priceTracker.py" with functions ( get_gold_price24 , update_gold_price24_json_file , get_gold_price24_async)
+# in version goldPriceTrackerV2.0_Async.py
+- use asyncio to execute the functions concurrently
+- use aiohttp to make the requests to the websites
+- use bs4 to parse the html content
+- collect the gold prices from 4 websites
+- the average price in 3 decimal points and save it in a json file
+- updated the functions library "priceTracker.py" with functions ( get_gold_price24 , update_gold_price24_json_file , get_gold_price24_async)
 
 
-- in version goldPriceTrackerV3.0_Async.py
-- - we will plot the data in a graph using matplotlib
-- - we added more refactoring to the code
-- - updated the functions library "priceTracker.py" with functions ( get_gold_price24 , update_gold_price24_json_file , get_gold_price24_async , get_all_gold_prices24 , plot_gold_prices24 )
+# in version goldPriceTrackerV3.0_Async.py
+- plot the data in a graph using matplotlib
+- added more refactoring to the code
+- updated the functions library "priceTracker.py" with functions ( get_gold_price24 , update_gold_price24_json_file , get_gold_price24_async , get_all_gold_prices24 , plot_gold_prices24 )

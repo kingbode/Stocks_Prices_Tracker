@@ -34,4 +34,17 @@ https://www.youtube.com/watch?v=cZ3iHLIDzVI&list=PLhTjy8cBISEpfMihZ8E5yynf5sqPCc
 ### in version goldPriceTrackerV3.0_Async.py
 - plot the data in a graph using matplotlib
 - added more refactoring to the code
-- updated the functions library "priceTracker.py" with functions ( get_gold_price24 , update_gold_price24_json_file , get_gold_price24_async , get_all_gold_prices24 , plot_gold_prices24 )
+- updated the functions library "priceTracker.py" with functions:
+   get_gold_price24 ,
+   update_gold_price24_json_file , 
+   get_gold_price24_async ,
+   get_all_gold_prices24 , 
+   plot_gold_prices24
+
+### in version goldPriceTrackerV4.0_Async.py
+- added more refactoring to the code
+- updated the functions library "priceTracker.py" with functions:
+   get_silver_price ,
+   get_silver_price_async ,
+   get_all_silver_prices999 ,
+

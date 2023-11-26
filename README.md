@@ -58,4 +58,14 @@ https://www.youtube.com/watch?v=cZ3iHLIDzVI&list=PLhTjy8cBISEpfMihZ8E5yynf5sqPCc
    update_silver_price999_json_file ,
    get_all_stock_prices ,
    plot_prices ,
- 
+
+### in version goldPriceTrackerV7.0_Async.py
+- added more refactoring to the code
+- updated the functions library "priceTrackerV7.py" with functions:
+
+   get_gold_price24_async ,
+   get_silver_price_async ,
+   update_stock_price_json_file ,
+   get_all_stock_prices ,
+   plot_prices ,
+   

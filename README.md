@@ -48,3 +48,14 @@ https://www.youtube.com/watch?v=cZ3iHLIDzVI&list=PLhTjy8cBISEpfMihZ8E5yynf5sqPCc
    get_silver_price_async ,
    get_all_silver_prices999 ,
 
+### in version goldPriceTrackerV6.0_Async.py
+- added more refactoring to the code
+- we made a single function to get the prices of gold and silver, and we named it get_all_stock_prices
+- updated the functions library "priceTrackerV6.py" with functions:
+   get_gold_price24_async ,
+   update_gold_price24_json_file ,
+   get_silver_price_async ,
+   update_silver_price999_json_file ,
+   get_all_stock_prices ,
+   plot_prices ,
+ 

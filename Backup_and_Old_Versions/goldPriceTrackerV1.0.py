@@ -7,7 +7,7 @@ in this version:
 """
 
 
-from priceTracker import *
+from priceTrackerV1 import *
 
 import time
 

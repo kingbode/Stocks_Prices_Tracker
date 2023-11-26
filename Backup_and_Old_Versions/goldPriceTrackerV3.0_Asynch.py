@@ -8,7 +8,7 @@ in this version:
 - we will plot the data in a graph using matplotlib
 """
 
-from priceTracker import *
+from priceTrackerV1 import *
 import asyncio
 
 

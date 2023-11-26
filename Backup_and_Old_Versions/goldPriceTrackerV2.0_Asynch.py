@@ -8,7 +8,7 @@ in this version:
 - we get the average price in 3 decimal points and save it in a json file
 """
 
-from priceTracker import *
+from priceTrackerV1 import *
 import asyncio
 import time
 async def main():

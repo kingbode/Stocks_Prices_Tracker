@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import json
 import os
 
+
 def get_stocks_data():
     # read the stocks dict from the stocks.json file
     try:
@@ -55,52 +56,6 @@ async def get_gold_price24_async(url, _key):
     except Exception as e:
         print(f'Error fetching data from the website {url} and the error is: {e} ')
         return None
-
-
-def update_stock_price_json_file(stock_type, stock_average_price):
-    """
-    This function takes the average gold price and updates the gold_prices.json file
-    :param stock_type:
-    :param stock_average_price:
-    :return: None
-    """
-    print('\nUpdating the gold_prices.json file .......', end='')
-
-    file_name = f'{stock_type.lower()}_prices.json'
-
-    if os.path.exists(file_name):
-        with open(file_name, 'r') as file:
-            data = json.load(file)
-            new_update = {
-                'date': datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-                'price': stock_average_price
-            }
-
-            # check and the status of the price either it is the same or changed
-            last_price = data[-1]['price']
-            current_price = stock_average_price
-
-            if last_price > current_price:
-                print(f'\nThe {stock_type} price is decreased by {(last_price - current_price):.3f} KD')
-            elif last_price < current_price:
-                print(f'\nThe {stock_type} price is increased by {(current_price - last_price):.3f} KD')
-            else:
-                print(f'\nThe {stock_type} price is not changed')
-
-            data.append(new_update)
-
-        with open(file_name, 'w') as file:
-            json.dump(data, file, indent=4)
-
-    else:
-        with open(file_name, 'w') as file:
-            new_update = {
-                'date': datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-                'price': stock_average_price
-            }
-            json.dump([new_update], file, indent=4)
-
-    print(' Done')
 
 
 async def get_silver_price_async(url, _key):
@@ -151,6 +106,51 @@ async def get_silver_price_async(url, _key):
         return None
 
 
+def update_stock_price_json_file(stock_type, stock_average_price):
+    """
+    This function takes the average gold price and updates the gold_prices.json file
+    :param stock_type:
+    :param stock_average_price:
+    :return: None
+    """
+    json_file = f'{stock_type.lower()}_prices.json'
+    print(f'\nUpdating the {json_file} file ....... ', end='')
+
+    file_name = f'{stock_type.lower()}_prices.json'
+
+    if os.path.exists(file_name):
+        with open(file_name, 'r') as file:
+            data = json.load(file)
+            new_update = {
+                'date': datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+                'price': stock_average_price
+            }
+
+            # check and the status of the price either it is the same or changed
+            last_price = data[-1]['price']
+            current_price = stock_average_price
+
+            if last_price > current_price:
+                print(f'The {stock_type} price is decreased by {(last_price - current_price):.3f} KD')
+            elif last_price < current_price:
+                print(f'The {stock_type} price is increased by {(current_price - last_price):.3f} KD')
+            else:
+                print(f'The {stock_type} price is not changed ... ', end='')
+
+            data.append(new_update)
+
+        with open(file_name, 'w') as file:
+            json.dump(data, file, indent=4)
+
+    else:
+        with open(file_name, 'w') as file:
+            new_update = {
+                'date': datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+                'price': stock_average_price
+            }
+            json.dump([new_update], file, indent=4)
+
+
 async def get_all_stock_prices(stock_dict):
 
     stocks_prices = []
@@ -176,7 +176,6 @@ async def get_all_stock_prices(stock_dict):
             if stock_price:
                 stocks_prices.append((stock_price, stock_type, stock_url))
 
-
     end = time.time()
     # get the average price in 3 decimal points
     if stocks_prices:
@@ -199,7 +198,7 @@ async def get_all_stock_prices(stock_dict):
             print(f'\nThe average {key} price is: {stock_average_price} KD')
             print()
 
-        print(f'\nTime taken: {(end - start):.2f} seconds')
+        print(f'Time taken: {(end - start):.2f} seconds')
         return return_stock_prices
     else:
         print(f'Error fetching data from the websites')

@@ -68,4 +68,10 @@ https://www.youtube.com/watch?v=cZ3iHLIDzVI&list=PLhTjy8cBISEpfMihZ8E5yynf5sqPCc
    update_stock_price_json_file ,
    get_all_stock_prices ,
    plot_prices ,
-   
+
+### in version goldPriceTrackerV8.0_Async.py
+- added stocks.json file to store the stocks symbols and names and functions
+- updated the functions library "priceTrackerV8.py" with functions:
+    
+   updated the function "update_stock_price_json_file" to show the stock price status (up or down) and the percentage of change
+

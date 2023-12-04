@@ -73,5 +73,6 @@ https://www.youtube.com/watch?v=cZ3iHLIDzVI&list=PLhTjy8cBISEpfMihZ8E5yynf5sqPCc
 - added stocks.json file to store the stocks symbols and names and functions
 - updated the functions library "priceTrackerV8.py" with functions:
     
-   updated the function "update_stock_price_json_file" to show the stock price status (up or down) and the percentage of change
+   updated the function "update_stock_price_json_file" to show the stock price status (up or down) and the percentage of change.
+   added get_stocks_data function to get the stocks symbols and names from stocks.json file
 

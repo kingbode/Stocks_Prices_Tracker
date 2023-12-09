@@ -1,11 +1,10 @@
 # Stocks Prices Tracker
-Scraping and Tracking Gold Prices using Python
+Scraping and Tracking Stocks Prices using Python
 
 ## Description
-This tools is intended t show how to scrape information from multiple websites and track the price of gold.
-The tool will scrape the price of gold from multiple websites and store the information in a JSON file.
-The tool will also display the price of gold in a graph across the time, and intended at the end to be run as a cron job to track the price of gold.
-Could be installed on a Raspberry Pi and connected to a screen to display the price of gold.
+This tools is intended t show how to scrape information from multiple websites and track the price of different stocks( eg.: gold, silver, ... etc.)
+The tool will also display the price of stocks in a graph across the time, and intended at the end to be run as a cron job to track the price of stocks.
+Could be installed on a Raspberry Pi and connected to a screen to display the price changes of stocks.
 or could be installed on a server and send the information to a website, or to a mobile app.
 
 
@@ -76,3 +75,14 @@ https://www.youtube.com/watch?v=cZ3iHLIDzVI&list=PLhTjy8cBISEpfMihZ8E5yynf5sqPCc
    updated the function "update_stock_price_json_file" to show the stock price status (up or down) and the percentage of change.
    added get_stocks_data function to get the stocks symbols and names from stocks.json file
 
+### in version stocks_PriceTrackerV9.0.py
+- added stocks.json file to store the stocks symbols and names and functions and prices as well, and removed the individual json files for each stock
+  like gold.json and silver.json.
+- updated the functions library "priceTrackerV9.py" with functions:
+    
+   -- updated the function "update_stock_price_json_file" to save the stocks data including last collected prices for stocks,
+   and show the stock price status (up or down) and the percentage of change.
+   -- added "get_stocks_data" function to get the stocks symbols and names from stocks.json file
+   -- added return_codes dictionary to return the status of the function and the message
+   -- added "stocks_data_template" dictionary to be used to create the stocks.json file in case it is not found
+   -- added "progress_bar" function to show the progress of the function at the start of the application

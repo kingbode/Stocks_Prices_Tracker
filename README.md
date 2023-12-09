@@ -1,4 +1,4 @@
-# GoldPriceTracker
+# Stocks Prices Tracker
 Scraping and Tracking Gold Prices using Python
 
 ## Description

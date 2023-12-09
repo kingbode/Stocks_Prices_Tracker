@@ -1,0 +1,18 @@
+{
+    "Gold": {
+        "urls": [
+            "https://pricegold.net/ar/kw-kuwait/",
+            "https://ar.fkjewellers.com/pages/gold-price-in-kuwait",
+            "https://wikigerman.net/gold-kw/",
+            "https://www.livepriceofgold.com/"
+        ],
+        "get_price_function": "get_gold_price24_async"
+    },
+    "Silver": {
+        "urls": [
+            "https://www.livepriceofgold.com/silver-price/kuwait.html",
+            "https://www.prokerala.com/finance/silver-price.php"
+        ],
+        "get_price_function": "get_silver_price_async"
+    }
+}
